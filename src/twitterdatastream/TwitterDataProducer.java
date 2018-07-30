@@ -16,10 +16,10 @@ import com.twitter.hbc.core.processor.StringDelimitedProcessor;
 
 public class TwitterDataProducer {
 	private static final String topic = "twitterstream";
-	private static final String consumerkey = "n1Ryr4Opyetq9DYc3nPPgv1tu";
-	private static final String consumersecret = "xkXPgc8KmZJVd0tQqKxPbvRRUt5RpeqLumLNBwPrvqpuPdHpeF";
-	private static final String accesstoken = "1075166491-E0tHEszU0m1lFA1lp1pf1Xazg3YBu8RAYcZSFvu";
-	private static final String accesssecret = "Sd4s1dpeE3y13aEctXTuIupl8TsGR3yMlzAWQMDw70Qhw";
+	private static final String consumerkey = "";
+	private static final String consumersecret = "";
+	private static final String accesstoken = "";
+	private static final String accesssecret = "";
 	
 	public static void sendmessage() throws InterruptedException {
 		Properties props = new Properties();
@@ -30,7 +30,6 @@ public class TwitterDataProducer {
 		Producer<String, String> producer = new KafkaProducer<String, String>(props);
 		
 		BlockingQueue<String> blockqueue = new LinkedBlockingQueue<String>(10000);
-		//BlockingQueue<Event> eventqueue = new LinkedBlockingQueue(1000);
 		
 		Hosts hbc = new HttpHosts(Constants.STREAM_HOST);
 		StatusesFilterEndpoint endpoint = new StatusesFilterEndpoint();
@@ -47,9 +46,9 @@ public class TwitterDataProducer {
 		
 	
 		client.connect();
+		System.out.println("Client Started");
 		
 		
-		//Code Breaks here
 		for(int i = 0; i<1000; i++) {
 			ProducerRecord <String, String> record = null;
 			try {
@@ -59,16 +58,6 @@ public class TwitterDataProducer {
 			}
 			producer.send(record);
 		}
-/*		//blockqueue.put("hey");
-		System.out.println("started");
-		//while (!client.isDone())
-		for(int i = 0; i<1000; i++){
-			//System.out.println("in");
-			  String msg = blockqueue.take();
-			  //System.out.println("in 2");
-			  System.out.println(msg);
-			}*/
-		System.out.println("end");
 		producer.flush();
 		producer.close();
 		client.stop();

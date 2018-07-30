@@ -14,7 +14,7 @@ import com.twitter.hbc.httpclient.auth.*;
 import com.twitter.hbc.core.endpoint.StatusesFilterEndpoint;
 import com.twitter.hbc.core.processor.StringDelimitedProcessor;
 
-public class ProducerTwitter {
+public class TwitterDataProducer {
 	private static final String topic = "twitterstream";
 	private static final String consumerkey = "n1Ryr4Opyetq9DYc3nPPgv1tu";
 	private static final String consumersecret = "xkXPgc8KmZJVd0tQqKxPbvRRUt5RpeqLumLNBwPrvqpuPdHpeF";
@@ -76,7 +76,7 @@ public class ProducerTwitter {
 	
 	public static void main(String[] args) {
 		try {
-			ProducerTwitter.sendmessage();
+			TwitterDataProducer.sendmessage();
 		}catch (InterruptedException e) {
 			System.out.println(e);
 		}

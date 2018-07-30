@@ -5,7 +5,7 @@ import org.apache.kafka.clients.consumer.*;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 
-public class consumer {
+public class TwitterDataConsumer {
 	public static void main(String[] args) {
 		Properties props = new Properties();
 		props.put("bootstrap.servers", "localhost:9092");

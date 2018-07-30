@@ -16,10 +16,10 @@ import com.twitter.hbc.core.processor.StringDelimitedProcessor;
 
 public class ProducerTwitter {
 	private static final String topic = "twitterstream";
-	private static final String consumerkey = "";
-	private static final String consumersecret = "";
-	private static final String accesstoken = "";
-	private static final String accesssecret = "";
+	private static final String consumerkey = "n1Ryr4Opyetq9DYc3nPPgv1tu";
+	private static final String consumersecret = "xkXPgc8KmZJVd0tQqKxPbvRRUt5RpeqLumLNBwPrvqpuPdHpeF";
+	private static final String accesstoken = "1075166491-E0tHEszU0m1lFA1lp1pf1Xazg3YBu8RAYcZSFvu";
+	private static final String accesssecret = "Sd4s1dpeE3y13aEctXTuIupl8TsGR3yMlzAWQMDw70Qhw";
 	
 	public static void sendmessage() throws InterruptedException {
 		Properties props = new Properties();
